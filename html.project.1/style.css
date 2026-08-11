@@ -1,6 +1,4 @@
-body {<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+body {
   font-family: Arial, sans-serif;
   background-color: #5d73a5;
   color: #3a1d02;
@@ -33,10 +31,11 @@ h3 {
 }
 
 header {
-  background-color: #be4594;
+  background-color: #cf85b5;
   color: #ffffff;
   padding: 20px;
   text-align: center;
+  border-radius: 8px;
 }
 header h1 {
   margin: 0;
@@ -47,19 +46,19 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 nav li {
   display: inline;
-  margin: 0 10px;
 }
 nav a {
   color: #ffffff;
   text-decoration: dashed;
-  font-weight: bold;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 nav a:hover {
-  color: #ffaedf;
+  color: #be4594;
 }
 button {
   background-color: #3c85d3;
@@ -72,11 +71,13 @@ button {
 button:hover {
   background-color: #eab1d6;
 }
+
 img {
   max-width: 50%;
   height: auto;
   border-radius: 8px;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -108,7 +109,7 @@ input[type="tel"] {
   border-radius: 10px;
 }
 footer {
-  background-color: #be4594;
+  background-color: #cf85b5;
   color: #ffffff;
   text-align: center;
   padding: 20px;
