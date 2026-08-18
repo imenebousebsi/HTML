@@ -1,120 +1,260 @@
-body { <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  font-family: Arial, sans-serif;
-  background-color: #5d73a5;
-  color: #3a1d02;
-  margin: 10px;
-  padding: 10px;
+/* CSS Variables & Theme Setup */
+:root {
+  /* Colors */
+  --color-primary: #642971; /* Deep Burgundy */
+  --color-second: #3d0a3f; /* Lighter Burgundy / Wine */
+  --color-accent: #f5ca54; /* Warm Gold accent for highlights */
+  --color-text: #ffffff; /* Light text for high contrast */
+  --color-text-muted: #e0d0d2;
+  --color-card-bg: #af52b0; /* Darker background for cards */
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-pill: 36px;
+
+  /* Layout & Transitions */
+  --max-width: 1100px;
+  --transition: all 0.3s ease;
 }
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+  background-color: var(--color-card-bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+header a span:first-child {
+  color: var(--color-accent);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+/* Main Layout */
 main {
-  max-width: 800px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 20px;
-  background-color: #edf0f0;
-  border-radius: 8px;
+  padding: 2rem 1.5rem;
 }
 
 section {
-  background-color: #ffffff;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 h2 {
-  color: #3c85d3;
-  font-size: 2em;
-  margin-bottom: 15px;
-}
-h3 {
-  color: #be4594;
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
 }
 
-header {
-  background-color: #cf85b5;
-  color: #ffffff;
-  padding: 20px;
+/* Hero Section */
+#home {
   text-align: center;
-  border-radius: 8px;
+  padding: 6rem 1rem;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-sm);
+  margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
-header h1 {
-  margin: 0;
-  font-size: 2.5em;
+
+#home h2 {
+  font-size: 2.75rem;
+  color: var(--color-text);
 }
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
+
+#home h3 {
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
-nav li {
-display: inline;
+
+#home p {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
 }
-nav a {
-  color: #ffffff;
-  text-decoration: dashed;
-  font-weight: 700;
-  transition: color 0.3s ease;
-}
-nav a:hover {
-  color: #c0348f;
-}
+
+/* Buttons */
 button {
-  background-color: #3c85d3;
-  color: #ffffff;
+  background-color: var(--color-accent);
+  color: var(--color-card-bg);
   border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
   cursor: pointer;
+  transition: var(--transition);
 }
+
 button:hover {
-  background-color: #eab1d6;
+  transform: translateY(-2px);
+  background-color: #ffffff;
 }
 
-img {
-  max-width: 100%;
+/* About Section */
+#about ul {
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+#about li {
+  background-color: var(--color-second);
+  color: var(--color-text);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Work Section */
+#work ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+#work li {
+  background-color: var(--color-card-bg);
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#work img {
+  width: 100%;
   height: auto;
-  border-radius: 8px;
-
+  border-radius: var(--radius-sm);
+  margin-top: 0.75rem;
+  display: block;
 }
 
+/* Table Styles (Resume) */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 1.5rem;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
 }
-table th,
-table td {
-  border: 1px solid #ccc;
-  padding: 10px;
+
+th,
+td {
+  padding: 1rem;
   text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-table th {
-  background-color: #be4594;
-  color: #ffffff;
+
+th {
+  background-color: var(--color-second);
+  color: var(--color-text);
+  font-weight: 600;
 }
+
+/* Contact Form */
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
+  max-width: 600px;
+  margin-top: 1.5rem;
+  background-color: var(--color-card-bg);
+  padding: 2rem;
+  border-radius: var(--radius-sm);
 }
+
 label {
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
 }
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
 }
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-accent);
+  border-color: transparent;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+form button {
+  align-self: flex-start;
+}
+
+/* Footer */
 footer {
-  background-color: #cf85b5;
-  color: #ffffff;
   text-align: center;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 2rem;
+  background-color: var(--color-card-bg);
+  color: var(--color-text-muted);
+  margin-top: 2rem;
 }
