@@ -1,12 +1,12 @@
 /* CSS Variables & Theme Setup */
 :root {
   /* Colors */
-  --color-primary: #642971; /* Deep Burgundy */
-  --color-second: #3d0a3f; /* Lighter Burgundy / Wine */
-  --color-accent: #f5ca54; /* Warm Gold accent for highlights */
-  --color-text: #ffffff; /* Light text for high contrast */
+  --color-primary: #642971; 
+  --color-second: #3d0a3f; 
+  --color-accent: #f5ca54; 
+  --color-text: #ffffff; 
   --color-text-muted: #e0d0d2;
-  --color-card-bg: #af52b0; /* Darker background for cards */
+  --color-card-bg: #af52b0;
 
   /* Border Radius */
   --radius-sm: 8px;
@@ -181,6 +181,20 @@ button:hover {
   margin-top: 0.75rem;
   display: block;
 }
+
+
+
+#video {
+  text-align: center;
+}
+
+#video video {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 1.5rem;
+  border-radius: var(--radius-sm);
+}
+
 
 /* Table Styles (Resume) */
 table {
